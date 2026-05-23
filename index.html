@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mahima Sara Jacob - Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         * {
             margin: 0;
@@ -12,8 +11,295 @@
             box-sizing: border-box;
         }
         
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #f1f5f9;
+        }
+
+        .container {
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #0f172a;
+            color: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+        }
+
+        nav {
+            display: none;
+            gap: 1.5rem;
+            font-size: 0.875rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #06b6d4;
+        }
+
+        @media (min-width: 768px) {
+            nav {
+                display: flex;
+            }
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #0c0e27 50%, #164e63 100%);
+            color: white;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            opacity: 0.5;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+            min-height: 85vh;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (min-width: 1024px) {
+            .hero .container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(6, 182, 212, 0.2);
+            border: 1px solid rgba(34, 211, 238, 0.3);
+            color: #cffafe;
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 4rem;
+            }
+        }
+
+        .hero h1 .highlight {
+            color: #06b6d4;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: #cbd5e1;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            max-width: 42rem;
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            border: none;
+            font-size: 1rem;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: #06b6d4;
+            color: #0f172a;
+        }
+
+        .btn-primary:hover {
+            background-color: #22d3ee;
+            box-shadow: 0 20px 25px -5px rgba(6, 182, 212, 0.3);
+        }
+
+        .btn-secondary {
+            border: 2px solid #64748b;
+            color: white;
+            background-color: transparent;
+        }
+
+        .btn-secondary:hover {
+            border-color: #06b6d4;
+            background-color: rgba(6, 182, 212, 0.1);
+        }
+
+        .hero-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 2rem;
+            padding: 2rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .card-item {
+            background-color: rgba(30, 41, 59, 0.7);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+        }
+
+        .card-item h3 {
+            color: #06b6d4;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .card-item p {
+            color: #cbd5e1;
+            margin-top: 0.5rem;
+        }
+
+        .card-item.full {
+            grid-column: 1 / -1;
+        }
+
+        /* ABOUT & EDUCATION SECTION */
+        .about-section {
+            background-color: #f1f5f9;
+            padding: 5rem 1.5rem;
+            border-radius: 3rem 3rem 0 0;
+            position: relative;
+            z-index: 20;
+        }
+
+        .about-section .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .about-section .container {
+                grid-template-columns: 1fr 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        .card h2 {
+            font-size: 1.875rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: #0f172a;
+        }
+
+        .card p {
+            color: #475569;
+            line-height: 1.8;
+            font-size: 1.125rem;
+        }
+
+        .card-gradient {
+            background: linear-gradient(135deg, #0891b2, #0f172a);
+            color: white;
+        }
+
+        .card-gradient h2 {
+            color: white;
+        }
+
+        .card-gradient p {
+            color: #cbd5e1;
+        }
+
+        .card-inner {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card-inner h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .card-inner p {
+            margin-top: 0.5rem;
+            color: #cffafe;
         }
 
         .skill-tag {
@@ -24,157 +310,303 @@
             border-radius: 1rem;
             font-weight: 500;
             border: 1px solid #a5d8dd;
+            margin-bottom: 0.75rem;
+            margin-right: 0.75rem;
+        }
+
+        .achievement-item {
+            border-left: 4px solid #06b6d4;
+            padding-left: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .achievement-item h3 {
+            font-weight: 600;
+            font-size: 1.125rem;
             margin-bottom: 0.5rem;
-            margin-right: 0.5rem;
+        }
+
+        .achievement-item p {
+            color: #475569;
+        }
+
+        /* TRACKER SECTION */
+        .tracker-section {
+            background-color: #cbd5e1;
+            padding: 4rem 1.5rem;
+        }
+
+        .tracker-section .container h2 {
+            font-size: 2.25rem;
+            font-weight: bold;
+            color: #0f172a;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .tracker-section .container > p {
+            text-align: center;
+            color: #475569;
+            margin-bottom: 2.5rem;
         }
 
         .activity-card {
             background: white;
             border-radius: 1.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             padding: 1.5rem;
             border: 1px solid #e2e8f0;
             margin-bottom: 1.5rem;
         }
 
-        textarea, input[type="file"], select {
-            font-family: inherit;
+        .activity-header {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1rem;
         }
 
-        .glow-text {
-            background: linear-gradient(to right, #06b6d4, #0891b2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        @media (min-width: 768px) {
+            .activity-header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        .activity-header h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #0891b2;
+        }
+
+        .activity-header p {
+            color: #64748b;
+        }
+
+        .activity-header select {
+            border: 1px solid #cbd5e1;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .activity-header select:focus {
+            outline: none;
+            ring: 2px;
+            ring-color: #06b6d4;
+            border-color: #06b6d4;
+        }
+
+        textarea {
+            width: 100%;
+            border: 1px solid #cbd5e1;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            min-height: 6.25rem;
+            font-family: inherit;
+            font-size: 1rem;
+            resize: vertical;
+        }
+
+        textarea:focus {
+            outline: none;
+            ring: 2px;
+            ring-color: #06b6d4;
+            border-color: #06b6d4;
+        }
+
+        .activity-actions {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .activity-actions {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+
+        input[type="file"] {
+            border: 1px solid #cbd5e1;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            background-color: #f8fafc;
+        }
+
+        .btn-add {
+            background-color: #0c4a6e;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-add:hover {
+            background-color: #082f49;
+        }
+
+        /* CONTACT SECTION */
+        .contact-section {
+            max-width: 56rem;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 3rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .contact-card h2 {
+            font-size: 2.25rem;
+            font-weight: bold;
+            color: #0f172a;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-card > p {
+            color: #475569;
+            max-width: 42rem;
+            margin: 0 auto 2rem;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .contact-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            text-align: left;
+        }
+
+        @media (min-width: 768px) {
+            .contact-info {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .contact-item {
+            background-color: #f1f5f9;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+        }
+
+        .contact-item h3 {
+            font-weight: bold;
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p {
+            color: #475569;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        /* UTILITIES */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .mt-4 {
+            margin-top: 2rem;
         }
     </style>
 </head>
 <body>
     <!-- HEADER -->
-    <header class="bg-slate-950 text-white shadow-lg sticky top-0 z-50 border-b border-slate-800">
-        <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-            <h1 class="text-2xl font-bold tracking-wide">MAHIMA SARA JACOB</h1>
-            <nav class="space-x-6 text-sm md:text-base hidden md:flex">
-                <a href="#home" class="hover:text-cyan-300 transition">Home</a>
-                <a href="#tracker" class="hover:text-cyan-300 transition">PM Vikas Tracker</a>
-                <a href="#contact" class="hover:text-cyan-300 transition">Contact</a>
+    <header>
+        <div class="container">
+            <h1>MAHIMA SARA JACOB</h1>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#tracker">PM Vikas Tracker</a>
+                <a href="#contact">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- PAGE 1: HOME -->
-    <section id="home" class="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950 text-white">
-        <div class="absolute inset-0 opacity-10 bg-gradient-to-br from-white via-transparent to-transparent"></div>
-
-        <div class="max-w-7xl mx-auto px-6 py-20 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center min-h-[85vh]">
-                <!-- Left Section -->
-                <div>
-                    <div class="inline-block bg-cyan-500/20 border border-cyan-400/30 text-cyan-200 px-5 py-2 rounded-full text-sm mb-6 backdrop-blur-md">
-                        Electronics & Communication Engineering Student
-                    </div>
-
-                    <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6">
-                        MAHIMA <span class="text-cyan-400">SARA</span> JACOB
-                    </h1>
-
-                    <p class="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl mb-8">
-                        Passionate about IoT innovation, embedded systems, smart technologies, and engineering solutions.
-                        Currently pursuing B.Tech at College of Engineering Kidangoor and interning at IIIT Kottayam as an IoT Assistant.
-                    </p>
-
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#contact" class="bg-cyan-500 hover:bg-cyan-400 text-slate-900 px-8 py-4 rounded-2xl font-semibold transition shadow-xl">
-                            Contact Me
-                        </a>
-                        <a href="#tracker" class="border border-slate-500 hover:border-cyan-400 hover:bg-cyan-500/10 px-8 py-4 rounded-2xl font-semibold transition">
-                            View PM Vikas Tracker
-                        </a>
-                    </div>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="container">
+            <!-- Left Column -->
+            <div>
+                <div class="hero-badge">
+                    Electronics & Communication Engineering Student
                 </div>
 
-                <!-- Right Section -->
-                <div class="relative">
-                    <div class="bg-white/10 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 shadow-2xl">
-                        <div class="grid grid-cols-2 gap-6">
-                            <div class="bg-slate-800/70 rounded-2xl p-6">
-                                <h3 class="text-cyan-400 text-4xl font-bold">IoT</h3>
-                                <p class="text-slate-300 mt-2">Technology Enthusiast</p>
-                            </div>
+                <h1>
+                    MAHIMA <span class="highlight">SARA</span> JACOB
+                </h1>
 
-                            <div class="bg-slate-800/70 rounded-2xl p-6">
-                                <h3 class="text-cyan-400 text-4xl font-bold">ECE</h3>
-                                <p class="text-slate-300 mt-2">Engineering Student</p>
-                            </div>
+                <p>
+                    Passionate about IoT innovation, embedded systems, smart technologies, and engineering solutions.
+                    Currently pursuing B.Tech at College of Engineering Kidangoor and interning at IIIT Kottayam as an IoT Assistant.
+                </p>
 
-                            <div class="bg-slate-800/70 rounded-2xl p-6 col-span-2">
-                                <h3 class="text-2xl font-bold mb-3">Current Internship</h3>
-                                <p class="text-slate-300 leading-relaxed">
-                                    Working at IIIT Kottayam on IoT Assistant projects involving smart systems,
-                                    embedded applications, and innovative technology solutions.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="button-group">
+                    <a href="#contact" class="btn btn-primary">Contact Me</a>
+                    <a href="#tracker" class="btn btn-secondary">View PM Vikas Tracker</a>
                 </div>
             </div>
-        </div>
 
-        <!-- About & Education Section -->
-        <div class="bg-slate-100 text-slate-900 rounded-t-[3rem] relative z-20">
-            <div class="max-w-7xl mx-auto px-6 py-20 space-y-14">
-                <!-- About & Education -->
-                <div class="grid lg:grid-cols-2 gap-10">
-                    <div class="bg-white rounded-[2rem] shadow-xl p-10 border border-slate-200 hover:-translate-y-1 transition duration-300">
-                        <h2 class="text-3xl font-bold mb-6 text-slate-900">About Me</h2>
-                        <p class="text-slate-600 leading-relaxed text-lg">
-                            I am a highly motivated Electronics and Communication Engineering student
-                            with a strong passion for Internet of Things, embedded systems,
-                            communication technologies, and modern engineering innovation.
-                        </p>
-                    </div>
-
-                    <div class="bg-gradient-to-br from-cyan-600 to-slate-900 rounded-[2rem] shadow-2xl p-10 text-white">
-                        <h2 class="text-3xl font-bold mb-6">Education</h2>
-                        <div class="bg-white/10 rounded-2xl p-6 backdrop-blur-md border border-white/10">
-                            <h3 class="text-2xl font-semibold">College of Engineering Kidangoor</h3>
-                            <p class="text-cyan-100 mt-2">B.Tech in Electronics & Communication Engineering</p>
-                            <p class="text-slate-200 mt-1">Kottayam, Kerala</p>
+            <!-- Right Column -->
+            <div>
+                <div class="hero-card">
+                    <div class="card-grid">
+                        <div class="card-item">
+                            <h3>IoT</h3>
+                            <p>Technology Enthusiast</p>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Skills & Achievements -->
-                <div class="grid lg:grid-cols-2 gap-10">
-                    <div class="bg-white rounded-[2rem] shadow-xl p-10 border border-slate-200">
-                        <h2 class="text-3xl font-bold mb-6">Technical Skills</h2>
-                        <div class="flex flex-wrap">
-                            <span class="skill-tag">IoT</span>
-                            <span class="skill-tag">Arduino</span>
-                            <span class="skill-tag">Embedded Systems</span>
-                            <span class="skill-tag">C Programming</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">React</span>
-                            <span class="skill-tag">HTML/CSS</span>
-                            <span class="skill-tag">Communication Systems</span>
+                        <div class="card-item">
+                            <h3>ECE</h3>
+                            <p>Engineering Student</p>
                         </div>
-                    </div>
 
-                    <div class="bg-white rounded-[2rem] shadow-xl p-10 border border-slate-200">
-                        <h2 class="text-3xl font-bold mb-6">Achievements</h2>
-                        <div class="space-y-5">
-                            <div class="border-l-4 border-cyan-500 pl-5">
-                                <h3 class="font-semibold text-lg">Selected for IIIT Kottayam Internship</h3>
-                                <p class="text-slate-600 mt-1">
-                                    Chosen as an IoT Assistant Intern for technical learning and project exposure.
-                                </p>
-                            </div>
-                            <div class="border-l-4 border-cyan-500 pl-5">
-                                <h3 class="font-semibold text-lg">Engineering Project Participation</h3>
-                                <p class="text-slate-600 mt-1">
-                                    Actively involved in practical electronics and communication mini projects.
-                                </p>
-                            </div>
+                        <div class="card-item full">
+                            <h3 style="font-size: 1.5rem;">Current Internship</h3>
+                            <p>
+                                Working at IIIT Kottayam on IoT Assistant projects involving smart systems,
+                                embedded applications, and innovative technology solutions.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -182,63 +614,110 @@
         </div>
     </section>
 
-    <!-- PAGE 2: PM VIKAS TRACKER -->
-    <section id="tracker" class="bg-slate-200 py-16 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-10">
-                <h2 class="text-4xl font-bold text-slate-800">PM Vikas Activity Tracker</h2>
-                <p class="text-slate-600 mt-3">
-                    Track daily internship activities and upload supporting images.
+    <!-- ABOUT & EDUCATION -->
+    <section class="about-section">
+        <div class="container">
+            <div class="card">
+                <h2>About Me</h2>
+                <p>
+                    I am a highly motivated Electronics and Communication Engineering student
+                    with a strong passion for Internet of Things, embedded systems,
+                    communication technologies, and modern engineering innovation.
                 </p>
             </div>
+
+            <div class="card card-gradient">
+                <h2>Education</h2>
+                <div class="card-inner">
+                    <h3>College of Engineering Kidangoor</h3>
+                    <p>B.Tech in Electronics & Communication Engineering</p>
+                    <p style="margin-top: 0.25rem;">Kottayam, Kerala</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SKILLS & ACHIEVEMENTS -->
+        <div class="container mt-4">
+            <div class="grid-2">
+                <div class="card">
+                    <h2>Technical Skills</h2>
+                    <div>
+                        <span class="skill-tag">IoT</span>
+                        <span class="skill-tag">Arduino</span>
+                        <span class="skill-tag">Embedded Systems</span>
+                        <span class="skill-tag">C Programming</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">Communication Systems</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Achievements</h2>
+                    <div class="achievement-item">
+                        <h3>Selected for IIIT Kottayam Internship</h3>
+                        <p>
+                            Chosen as an IoT Assistant Intern for technical learning and project exposure.
+                        </p>
+                    </div>
+                    <div class="achievement-item">
+                        <h3>Engineering Project Participation</h3>
+                        <p>
+                            Actively involved in practical electronics and communication mini projects.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRACKER SECTION -->
+    <section id="tracker" class="tracker-section">
+        <div class="container">
+            <h2>PM Vikas Activity Tracker</h2>
+            <p>Track daily internship activities and upload supporting images.</p>
 
             <div id="activitiesContainer"></div>
         </div>
     </section>
 
-    <!-- PAGE 3: CONTACT -->
-    <section id="contact" class="max-w-5xl mx-auto px-6 py-16">
-        <div class="bg-white rounded-3xl shadow-2xl p-10 text-center">
-            <h2 class="text-4xl font-bold text-slate-800 mb-6">Resume & Contact</h2>
-
-            <p class="text-slate-600 max-w-2xl mx-auto mb-8">
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+        <div class="contact-card">
+            <h2>Resume & Contact</h2>
+            <p>
                 Feel free to connect for internships, academic collaborations,
                 and technology-related opportunities.
             </p>
 
-            <div class="flex flex-col md:flex-row justify-center gap-6 mb-10">
-                <a href="mailto:mahimasj07@gmail.com" class="bg-cyan-700 hover:bg-cyan-800 text-white px-6 py-3 rounded-xl shadow-md transition">
-                    Email Me
-                </a>
-                <a href="#" class="border border-cyan-700 text-cyan-700 hover:bg-cyan-50 px-6 py-3 rounded-xl transition" download>
-                    Download Resume
-                </a>
+            <div class="contact-buttons">
+                <a href="mailto:mahimasj07@gmail.com" class="btn btn-primary">Email Me</a>
+                <a href="#" class="btn btn-secondary" download>Download Resume</a>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6 text-left">
-                <div class="bg-slate-100 rounded-2xl p-6">
-                    <h3 class="font-bold text-lg mb-2">Email</h3>
-                    <p class="text-slate-600">mahimasj07@gmail.com</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <p>mahimasj07@gmail.com</p>
                 </div>
 
-                <div class="bg-slate-100 rounded-2xl p-6">
-                    <h3 class="font-bold text-lg mb-2">LinkedIn</h3>
-                    <p class="text-slate-600">Add LinkedIn Profile</p>
+                <div class="contact-item">
+                    <h3>LinkedIn</h3>
+                    <p>Add LinkedIn Profile</p>
                 </div>
 
-                <div class="bg-slate-100 rounded-2xl p-6">
-                    <h3 class="font-bold text-lg mb-2">Location</h3>
-                    <p class="text-slate-600">Kottayam, Kerala, India</p>
+                <div class="contact-item">
+                    <h3>Location</h3>
+                    <p>Kottayam, Kerala, India</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-slate-950 text-white text-center py-6 mt-10">
-        <p>
-            © 2026 MAHIMA SARA JACOB | Electronics & Communication Engineering Portfolio
-        </p>
+    <footer>
+        <p>© 2026 MAHIMA SARA JACOB | Electronics & Communication Engineering Portfolio</p>
     </footer>
 
     <script>
@@ -255,33 +734,23 @@
             const container = document.getElementById('activitiesContainer');
             container.innerHTML = activities.map((date, index) => `
                 <div class="activity-card">
-                    <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-4">
+                    <div class="activity-header">
                         <div>
-                            <h3 class="text-xl font-bold text-cyan-700">
-                                Activity ${index + 1}
-                            </h3>
-                            <p class="text-slate-500">Date: ${date}</p>
+                            <h3>Activity ${index + 1}</h3>
+                            <p>Date: ${date}</p>
                         </div>
-                        <select class="border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500 bg-white">
+                        <select>
                             <option>Pending</option>
                             <option>Completed</option>
                             <option>In Progress</option>
                         </select>
                     </div>
 
-                    <textarea
-                        placeholder="Add activity notes here..."
-                        class="w-full border rounded-xl p-4 min-h-[100px] focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                    ></textarea>
+                    <textarea placeholder="Add activity notes here..."></textarea>
 
-                    <div class="mt-4 flex flex-col md:flex-row gap-4 items-start md:items-center">
-                        <input
-                            type="file"
-                            class="border rounded-lg p-2 bg-slate-50"
-                        />
-                        <button class="bg-cyan-700 hover:bg-cyan-800 text-white px-6 py-2 rounded-lg transition">
-                            Add Activity
-                        </button>
+                    <div class="activity-actions">
+                        <input type="file" />
+                        <button class="btn-add">Add Activity</button>
                     </div>
                 </div>
             `).join('');
