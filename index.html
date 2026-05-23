@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahima Sara Jacob - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: linear-gradient(to right, #cffafe, #f0f9ff);
+            color: #164e63;
+            padding: 0.75rem 1.25rem;
+            border-radius: 1rem;
+            font-weight: 500;
+            border: 1px solid #a5d8dd;
+            margin-bottom: 0.5rem;
+            margin-right: 0.5rem;
+        }
+
+        .activity-card {
+            background: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 1.5rem;
+        }
+
+        textarea, input[type="file"], select {
+            font-family: inherit;
+        }
+
+        .glow-text {
+            background: linear-gradient(to right, #06b6d4, #0891b2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="bg-slate-950 text-white shadow-lg sticky top-0 z-50 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+            <h1 class="text-2xl font-bold tracking-wide">MAHIMA SARA JACOB</h1>
+            <nav class="space-x-6 text-sm md:text-base hidden md:flex">
+                <a href="#home" class="hover:text-cyan-300 transition">Home</a>
+                <a href="#tracker" class="hover:text-cyan-300 transition">PM Vikas Tracker</a>
+                <a href="#contact" class="hover:text-cyan-300 transition">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE 1: HOME -->
+    <section id="home" class="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-cyan-950 text-white">
+        <div class="absolute inset-0 opacity-10 bg-gradient-to-br from-white via-transparent to-transparent"></div>
+
+        <div class="max-w-7xl mx-auto px-6 py-20 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center min-h-[85vh]">
+                <!-- Left Section -->
+                <div>
+                    <div class="inline-block bg-cyan-500/20 border border-cyan-400/30 text-cyan-200 px-5 py-2 rounded-full text-sm mb-6 backdrop-blur-md">
+                        Electronics & Communication Engineering Student
+                    </div>
+
+                    <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6">
+                        MAHIMA <span class="text-cyan-400">SARA</span> JACOB
+                    </h1>
+
+                    <p class="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl mb-8">
+                        Passionate about IoT innovation, embedded systems, smart technologies, and engineering solutions.
+                        Currently pursuing B.Tech at College of Engineering Kidangoor and interning at IIIT Kottayam as an IoT Assistant.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="bg-cyan-500 hover:bg-cyan-400 text-slate-900 px-8 py-4 rounded-2xl font-semibold transition shadow-xl">
+                            Contact Me
+                        </a>
+                        <a href="#tracker" class="border border-slate-500 hover:border-cyan-400 hover:bg-cyan-500/10 px-8 py-4 rounded-2xl font-semibold transition">
+                            View PM Vikas Tracker
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Section -->
+                <div class="relative">
+                    <div class="bg-white/10 backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 shadow-2xl">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="bg-slate-800/70 rounded-2xl p-6">
+                                <h3 class="text-cyan-400 text-4xl font-bold">IoT</h3>
+                                <p class="text-slate-300 mt-2">Technology Enthusiast</p>
+                            </div>
+
+                            <div class="bg-slate-800/70 rounded-2xl p-6">
+                                <h3 class="text-cyan-400 text-4xl font-bold">ECE</h3>
+                                <p class="text-slate-300 mt-2">Engineering Student</p>
+                            </div>
+
+                            <div class="bg-slate-800/70 rounded-2xl p-6 col-span-2">
+                                <h3 class="text-2xl font-bold mb-3">Current Internship</h3>
+                                <p class="text-slate-300 leading-relaxed">
+                                    Working at IIIT Kottayam on IoT Assistant projects involving smart systems,
+                                    embedded applications, and innovative technology solutions.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About & Education Section -->
+        <div class="bg-slate-100 text-slate-900 rounded-t-[3rem] relative z-20">
+            <div class="max-w-7xl mx-auto px-6 py-20 space-y-14">
+                <!-- About & Education -->
+                <div class="grid lg:grid-cols-2 gap-10">
+                    <div class="bg-white rounded-[2rem] shadow-xl p-10 border border-slate-200 hover:-translate-y-1 transition duration-300">
+                        <h2 class="text-3xl font-bold mb-6 text-slate-900">About Me</h2>
+                        <p class="text-slate-600 leading-relaxed text-lg">
+                            I am a highly motivated Electronics and Communication Engineering student
+                            with a strong passion for Internet of Things, embedded systems,
+                            communication technologies, and modern engineering innovation.
+                        </p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-cyan-600 to-slate-900 rounded-[2rem] shadow-2xl p-10 text-white">
+                        <h2 class="text-3xl font-bold mb-6">Education</h2>
+                        <div class="bg-white/10 rounded-2xl p-6 backdrop-blur-md border border-white/10">
+                            <h3 class="text-2xl font-semibold">College of Engineering Kidangoor</h3>
+                            <p class="text-cyan-100 mt-2">B.Tech in Electronics & Communication Engineering</p>
+                            <p class="text-slate-200 mt-1">Kottayam, Kerala</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills & Achievements -->
+                <div class="grid lg:grid-cols-2 gap-10">
+                    <div class="bg-white rounded-[2rem] shadow-xl p-10 border border-slate-200">
+                        <h2 class="text-3xl font-bold mb-6">Technical Skills</h2>
+                        <div class="flex flex-wrap">
+                            <span class="skill-tag">IoT</span>
+                            <span class="skill-tag">Arduino</span>
+                            <span class="skill-tag">Embedded Systems</span>
+                            <span class="skill-tag">C Programming</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">Communication Systems</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-[2rem] shadow-xl p-10 border border-slate-200">
+                        <h2 class="text-3xl font-bold mb-6">Achievements</h2>
+                        <div class="space-y-5">
+                            <div class="border-l-4 border-cyan-500 pl-5">
+                                <h3 class="font-semibold text-lg">Selected for IIIT Kottayam Internship</h3>
+                                <p class="text-slate-600 mt-1">
+                                    Chosen as an IoT Assistant Intern for technical learning and project exposure.
+                                </p>
+                            </div>
+                            <div class="border-l-4 border-cyan-500 pl-5">
+                                <h3 class="font-semibold text-lg">Engineering Project Participation</h3>
+                                <p class="text-slate-600 mt-1">
+                                    Actively involved in practical electronics and communication mini projects.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 2: PM VIKAS TRACKER -->
+    <section id="tracker" class="bg-slate-200 py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-bold text-slate-800">PM Vikas Activity Tracker</h2>
+                <p class="text-slate-600 mt-3">
+                    Track daily internship activities and upload supporting images.
+                </p>
+            </div>
+
+            <div id="activitiesContainer"></div>
+        </div>
+    </section>
+
+    <!-- PAGE 3: CONTACT -->
+    <section id="contact" class="max-w-5xl mx-auto px-6 py-16">
+        <div class="bg-white rounded-3xl shadow-2xl p-10 text-center">
+            <h2 class="text-4xl font-bold text-slate-800 mb-6">Resume & Contact</h2>
+
+            <p class="text-slate-600 max-w-2xl mx-auto mb-8">
+                Feel free to connect for internships, academic collaborations,
+                and technology-related opportunities.
+            </p>
+
+            <div class="flex flex-col md:flex-row justify-center gap-6 mb-10">
+                <a href="mailto:mahimasj07@gmail.com" class="bg-cyan-700 hover:bg-cyan-800 text-white px-6 py-3 rounded-xl shadow-md transition">
+                    Email Me
+                </a>
+                <a href="#" class="border border-cyan-700 text-cyan-700 hover:bg-cyan-50 px-6 py-3 rounded-xl transition" download>
+                    Download Resume
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 text-left">
+                <div class="bg-slate-100 rounded-2xl p-6">
+                    <h3 class="font-bold text-lg mb-2">Email</h3>
+                    <p class="text-slate-600">mahimasj07@gmail.com</p>
+                </div>
+
+                <div class="bg-slate-100 rounded-2xl p-6">
+                    <h3 class="font-bold text-lg mb-2">LinkedIn</h3>
+                    <p class="text-slate-600">Add LinkedIn Profile</p>
+                </div>
+
+                <div class="bg-slate-100 rounded-2xl p-6">
+                    <h3 class="font-bold text-lg mb-2">Location</h3>
+                    <p class="text-slate-600">Kottayam, Kerala, India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-white text-center py-6 mt-10">
+        <p>
+            © 2026 MAHIMA SARA JACOB | Electronics & Communication Engineering Portfolio
+        </p>
+    </footer>
+
+    <script>
+        // Activity data
+        const activities = [
+            '2026-05-20','2026-05-21','2026-05-22','2026-05-25','2026-05-26','2026-05-27','2026-05-28','2026-05-29',
+            '2026-06-01','2026-06-02','2026-06-03','2026-06-04','2026-06-05','2026-06-08','2026-06-09','2026-06-10',
+            '2026-06-11','2026-06-12','2026-06-15','2026-06-16','2026-06-17','2026-06-18','2026-06-19','2026-06-22',
+            '2026-06-23','2026-06-24','2026-06-25','2026-06-26','2026-06-29','2026-06-30'
+        ];
+
+        // Render activities
+        function renderActivities() {
+            const container = document.getElementById('activitiesContainer');
+            container.innerHTML = activities.map((date, index) => `
+                <div class="activity-card">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-cyan-700">
+                                Activity ${index + 1}
+                            </h3>
+                            <p class="text-slate-500">Date: ${date}</p>
+                        </div>
+                        <select class="border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500 bg-white">
+                            <option>Pending</option>
+                            <option>Completed</option>
+                            <option>In Progress</option>
+                        </select>
+                    </div>
+
+                    <textarea
+                        placeholder="Add activity notes here..."
+                        class="w-full border rounded-xl p-4 min-h-[100px] focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                    ></textarea>
+
+                    <div class="mt-4 flex flex-col md:flex-row gap-4 items-start md:items-center">
+                        <input
+                            type="file"
+                            class="border rounded-lg p-2 bg-slate-50"
+                        />
+                        <button class="bg-cyan-700 hover:bg-cyan-800 text-white px-6 py-2 rounded-lg transition">
+                            Add Activity
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Initialize
+        renderActivities();
+    </script>
+</body>
+</html>
